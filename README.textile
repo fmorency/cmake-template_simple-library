@@ -3,6 +3,10 @@ h2. Motivation
 This project is part of a serie of CMake template designed to teach, simplify
 and encourage the use of the CMake build system.
 
+The template is designed to by easily used with Git repositories. Libraries are
+designed to be used as Git submodules. The template is also designed to avoid
+nested dependencies between submodules.
+
 h2. Description
 
 This module builds a small dummy C++ library. The library build system modular
