@@ -1,0 +1,40 @@
+h2. Motivation
+
+This project is part of a serie of CMake template designed to teach, simplify
+and encourage the use of the CMake build system.
+
+h2. Description
+
+This module builds a small dummy C++ library. The library build system modular
+design allows the library to be build standalone or within an application.
+
+h2. Usage
+
+h3. Build the library
+
+In the project root directory, run the following commands to build the project:
+
+bc. $ mkdir build
+$ cd build
+$ cmake ..
+$ make
+
+h3. Add the library to your project
+
+To add this library to your application, first add
+
+@set(simple-library_DIR /path/to/the/library)@
+
+near the top of your application _CMakelists.txt_ file. You can then call
+
+@find_package(simple-library REQUIRED)@
+
+to configure the library. You can then add the line
+
+@include_directories(${simple-library_include_dir})@
+
+to add the library headers to your project include directories. After your
+@add_executable()@ line, you can add
+
+bc. add_dependencies(${PROJECT_NAME} simple-library)
+target_link_libraries(${PROJECT_NAME} simple-library)
