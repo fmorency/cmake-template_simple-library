@@ -20,7 +20,7 @@ In the project root directory, run the following commands to build the project:
 
 bc. $ mkdir build
 $ cd build
-$ cmake ..
+$ cmake -DCMAKE_BUILD_TYPE=Debug ..
 $ make
 
 h3. Add the library to your project
