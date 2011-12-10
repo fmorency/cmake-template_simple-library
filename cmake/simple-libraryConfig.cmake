@@ -25,7 +25,7 @@ if(NOT simple-library_FOUND)
     # build chain.
     if(NOT TARGET ${lib_name} AND
         NOT ${PROJECT_NAME} STREQUAL ${lib_name})
-        add_subdirectory(${lib_name}_DIR/..
+        add_subdirectory(${${lib_name}_DIR}/../
             ${CMAKE_CURRENT_BINARY_DIR}/lib/${lib_name})
     endif()
 endif()
