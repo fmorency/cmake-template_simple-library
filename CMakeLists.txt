@@ -7,9 +7,15 @@ cmake_minimum_required(VERSION 2.6)
 #Set a new CMake project
 project(simple-library)
 
+#If the build script is called from a parent project,
+# use the configuration from there.
+if(NOT COMMAND if_defined_set)
+    set(cmake_directory ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+endif()
+
 #Set the CMake module path to the project cmake directory. This location will
 # first be searched for external CMake packages.
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${cmake_directory})
 
 #Include the library build configuration. This will also include the custom
 # macro defined for the project.
